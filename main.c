@@ -92,15 +92,15 @@ void sizecmp(void)
  	//printf("=bigger %d,%d\n",size1,size2);
  	if(size1>size2) 
  	{ 
- 		printf("%s is bigger \n\n","text1"); 
+ 		printf("%s is bigger  \n\n","text1"); 
  	} 
  	else if(size1<size2)
  	{ 
- 		printf("%s is bigger\n\n","text2"); 
+ 		printf("%s is bigger \n\n","text2"); 
  	} 
  	else
  	{
- 		printf("filesize is same\n\n");
+ 		printf("filesize is same \n\n");
  	}
  	//size compare 
 
