@@ -55,9 +55,6 @@ void sizecmp(void)
 {
 	
  	int size1,size2; 
- 
- 	stat("text1",&stat1); 
- 	stat("text2",&stat2); 
  	//get text1,text2 data 
 
  	size1=(int)stat1.st_size; 
