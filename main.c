@@ -24,6 +24,12 @@ void blockcmp(void);
 void datecmp(void);
 void timecmp(void);
 
+int year1, month1, day1;
+int year2, month2, day2;
+int stat1_time;
+int stat2_time;
+
+
 int main(void)
 {
    filestat1();
@@ -36,7 +42,7 @@ int main(void)
    timecmp();
 }
 
-// load file info (file name : test1, test2)
+// load file info (file name : text1, text2)
 void filestat1(void)
 {
 	stat("text1",&stat1);
@@ -51,11 +57,23 @@ void filestat2(void)
 void filetime1(void)
 {
 	time1 = localtime(&stat1.st_mtime);
+
+	year1 = time1->tm_year+1900;
+	month1 = time1->tm_mon + 1;
+	day1 = time1->tm_mday;
+
+	stat1_time = (time1->tm_hour*3600)+(time1->tm_min*60)+(time1->tm_sec);
 }
 
 void filetime2(void)
 {
 	time2 = localtime(&stat2.st_mtime);
+
+	year2 = time2->tm_year+1900;
+	month2 = time2->tm_mon + 1;
+	day2 = time2->tm_mday;
+
+	stat2_time = (time1->tm_hour*3600)+(time1->tm_min*60)+(time1->tm_sec);
 }
 
 // compare files' data size
@@ -105,17 +123,6 @@ void blockcmp(void)
 // compare files' modified date
 void datecmp(void)
 {
-	int year1, month1, day1;
-	int year2, month2, day2;
-
-	year1 = time1->tm_year+1900;
-	month1 = time1->tm_mon + 1;
-	day1 = time1->tm_mday;
-
-	year2 = time2->tm_year+1900;
-	month2 = time2->tm_mon + 1;
-	day2 = time2->tm_mday;
-
 	printf("date compare\n");
 
 	if(year1==year2){
@@ -149,12 +156,6 @@ void datecmp(void)
 // compare files' modified time
 void timecmp(void)
 {	
-	int stat1_time;
-	int stat2_time;
-
-	stat1_time = (time1->tm_hour*3600)+(time1->tm_min*60)+(time1->tm_sec);
-	stat2_time = (time1->tm_hour*3600)+(time1->tm_min*60)+(time1->tm_sec);
-
 	printf("time compare\n");
 
 	if(stat1_time == stat2_time){
