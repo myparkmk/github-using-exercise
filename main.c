@@ -88,7 +88,7 @@ void sizecmp(void)
  	size2=(int)stat2.st_size; 
  	//get size of text1,text2 
  	
- 	
+	printf("size compare\n");
  	//printf("=bigger %d,%d\n",size1,size2);
  	if(size1>size2) 
  	{ 
