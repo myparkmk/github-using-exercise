@@ -53,31 +53,30 @@ void filetime2(void)
 {}
 void sizecmp(void)
 {
-	struct stat buf1,buf2; 
- 	struct tm* time; 
- 
- 
+	
  	int size1,size2; 
  
- 
- 	stat("text1",&buf1); 
- 	stat("text2",&buf2); 
+ 	stat("text1",&stat1); 
+ 	stat("text2",&stat2); 
  	//get text1,text2 data 
- 	//printf("size : %d\n", (int)buf1.st_size); 
- 	//printf("size : %d\n", (int)buf2.st_size); 
- 	size1=(int)buf1.st_size; 
- 	size2=(int)buf2.st_size; 
+
+ 	size1=(int)stat1.st_size; 
+ 	size2=(int)stat2.st_size; 
  	//get size of text1,text2 
- 
- 
+ 	
+ 	//printf("=bigger %d,%d\n",size1,size2);
  	if(size1>size2) 
  	{ 
- 		printf("%s is bigger\n","test1"); 
+ 		printf("%s is bigger %d,%d\n","text1",size1,size2); 
  	} 
- 	else 
+ 	else if(size1<size2)
  	{ 
- 		printf("%s is bigger\n","test2"); 
+ 		printf("%s is bigger\n","text2"); 
  	} 
+ 	else
+ 	{
+ 		printf("filesize is same\n");
+ 	}
  	//size compare 
 
 }
