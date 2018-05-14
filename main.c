@@ -67,7 +67,7 @@ void sizecmp(void)
  	//printf("=bigger %d,%d\n",size1,size2);
  	if(size1>size2) 
  	{ 
- 		printf("%s is bigger %d,%d\n","text1",size1,size2); 
+ 		printf("%s is bigger\n","text1"); 
  	} 
  	else if(size1<size2)
  	{ 
