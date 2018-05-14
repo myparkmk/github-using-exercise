@@ -80,21 +80,19 @@ void filetime2(void)
 void sizecmp(void)
 {
 	
- 	int size1,size2; 
+ 	int size1,size2;
  
- 	stat("text1",&stat1); 
- 	stat("text2",&stat2); 
  	//get text1,text2 data 
 
  	size1=(int)stat1.st_size; 
  	size2=(int)stat2.st_size; 
  	//get size of text1,text2 
  	
-	printf("size compare\n");
+ 	
  	//printf("=bigger %d,%d\n",size1,size2);
  	if(size1>size2) 
  	{ 
- 		printf("%s is bigger %d,%d\n\n","text1",size1,size2); 
+ 		printf("%s is bigger \n\n","text1"); 
  	} 
  	else if(size1<size2)
  	{ 
